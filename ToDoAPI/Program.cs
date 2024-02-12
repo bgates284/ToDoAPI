@@ -32,7 +32,8 @@ builder.Services.AddSwaggerGen(options =>
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 builder.Services.AddDbContext<Context>(opt =>
 {
-    opt.UseSqlServer("Server=localhost\\SQLEXPRESS;Database=ToDoDB;Integrated Security=true;");
+    //opt.UseSqlServer("Server=soul-collector.database.windows.net;Database=ToDo;User Id=wjg; Password='Bill_Gates!22'; Trusted_Connection=false;");
+    opt.UseSqlServer("Server=tcp:soul-collector.database.windows.net,1433;User Id=wjg; Password='Bill_Gates!22';Initial Catalog=ToDo;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
 });
 
 builder.Services.AddCors(options =>
@@ -72,6 +73,13 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
     app.UseDeveloperExceptionPage();
 }
+
+app.UseSwagger(options =>
+{
+    options.SerializeAsV2 = true;
+});
+app.UseSwaggerUI();
+app.UseDeveloperExceptionPage();
 
 app.UseHttpsRedirection();
 

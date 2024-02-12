@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "b6e23a06-6bb3-4952-a0c2-5eeb7f1e51e4": {
+      "ProjectGuid": "b6e23a06-6bb3-4952-a0c2-5eeb7f1e51e4",
+      "DisplayName": "ToDoAPI",
+      "ColorIndex": 0
+    },
+    "420685c8-d4ce-466f-9833-1a0536f085d0": {
+      "ProjectGuid": "420685c8-d4ce-466f-9833-1a0536f085d0",
+      "DisplayName": "ToDoAPI",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}

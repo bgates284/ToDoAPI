@@ -6,7 +6,8 @@ using ToDoAPI.Models;
 namespace ToDoAPI.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+//[Route("[controller]")]
+[Route("/")]
 [Microsoft.AspNetCore.Cors.EnableCors("MyAllowSpecificOrigins")]
 public class TaskController : Controller
 {
@@ -28,7 +29,7 @@ public class TaskController : Controller
     [HttpGet("GetTasks")]
     public IEnumerable<Models.Task> GetAllActiveTasks()
     {
-        return _context.Tasks.Where(x => x.Completed == false);
+        return _context.Tasks.Where(x => x.Completed == false && x.Deleted == false);
     }
 
     [HttpPost("UpdateTask")]
